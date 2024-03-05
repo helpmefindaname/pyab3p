@@ -39,8 +39,8 @@ def test_regression(text: str) -> None:
     hunflair_ab3p = HunFlairAb3P()
     ab3p = pyab3p.Ab3p()
 
-    hunflair_res = hunflair_ab3p.get_abbreviations(text)
-    ab3p_res = list(set([(r.short_form, r.long_form) for r in ab3p.get_abbrs(text)]))
+    hunflair_res = sorted(hunflair_ab3p.get_abbreviations(text))
+    ab3p_res = sorted(set([(r.short_form, r.long_form) for r in ab3p.get_abbrs(text)]))
 
     assert ab3p_res == hunflair_res
 
@@ -56,12 +56,12 @@ def test_large_regression(testdata) -> None:
     ab3p = pyab3p.Ab3p()
 
     for text in texts:
-        hunflair_res = hunflair_ab3p.get_abbreviations(text)
+        hunflair_res = sorted(hunflair_ab3p.get_abbreviations(text))
         ab3p_res = list(
             {r.short_form: r.long_form for r in ab3p.get_abbrs(text)}.items()
         )
 
-        assert ab3p_res == hunflair_res
+        assert sorted(ab3p_res) == hunflair_res
 
 
 def test_snapshot(test_snapshots, testdata) -> None:
