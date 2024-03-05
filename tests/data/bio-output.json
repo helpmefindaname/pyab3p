@@ -1,0 +1,121 @@
+[
+    [
+        {
+            "lf": "Respiratory syncytial viruses",
+            "prec": 0.999808,
+            "sf": "RSV",
+            "strat": "FirstLet"
+        }
+    ],
+    [],
+    [],
+    [],
+    [],
+    [
+        {
+            "lf": "Friedreich ataxia",
+            "prec": 0.992792,
+            "sf": "FRDA",
+            "strat": "ContLet"
+        }
+    ],
+    [],
+    [],
+    [],
+    [
+        {
+            "lf": "small nuclear ribonucleoprotein polypeptide N",
+            "prec": 0.999979,
+            "sf": "SNRPN",
+            "strat": "FirstLet"
+        },
+        {
+            "lf": "Prader-Willi syndrome",
+            "prec": 0.999408,
+            "sf": "PWS",
+            "strat": "FirstLetGen"
+        },
+        {
+            "lf": "fluorescence in situ hybridization",
+            "prec": 0.999964,
+            "sf": "FISH",
+            "strat": "FirstLet"
+        }
+    ],
+    [],
+    [],
+    [
+        {
+            "lf": "high mobility group",
+            "prec": 0.999808,
+            "sf": "HMG",
+            "strat": "FirstLet"
+        }
+    ],
+    [],
+    [],
+    [],
+    [],
+    [
+        {
+            "lf": "(RS)-1-aminoindan-1,5-dicarboxylic acid",
+            "prec": 0.992955,
+            "sf": "AIDA",
+            "strat": "WithinWrdFLet"
+        }
+    ],
+    [
+        {
+            "lf": "TEL1/ETV6",
+            "prec": 0.999555,
+            "sf": "TEL1",
+            "strat": "ContLet"
+        },
+        {
+            "lf": "kilobases",
+            "prec": 0.989054,
+            "sf": "kb",
+            "strat": "WithinWrdFWrd"
+        },
+        {
+            "lf": "pointed",
+            "prec": 0.987697,
+            "sf": "PNT",
+            "strat": "ContLet"
+        }
+    ],
+    [
+        {
+            "lf": "polymerase-chain-reaction",
+            "prec": 0.999408,
+            "sf": "PCR",
+            "strat": "FirstLetGen"
+        },
+        {
+            "lf": "proteolipid protein",
+            "prec": 0.997824,
+            "sf": "PLP",
+            "strat": "WithinWrdFWrd"
+        }
+    ],
+    [
+        {
+            "lf": "X-linked adrenoleukodystrophy",
+            "prec": 0.999517,
+            "sf": "X-ALD",
+            "strat": "WithinWrdFWrd"
+        },
+        {
+            "lf": "adrenomyeloneuropathy",
+            "prec": 0.997824,
+            "sf": "AMN",
+            "strat": "WithinWrdFWrd"
+        },
+        {
+            "lf": "Addison disease only \"",
+            "prec": 0.988583,
+            "sf": "ADO",
+            "strat": "FirstLetGenSkp"
+        }
+    ]
+]

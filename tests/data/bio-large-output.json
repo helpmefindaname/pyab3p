@@ -1,0 +1,50 @@
+[
+    [
+        {
+            "lf": "17alpha-ethinylestradiol",
+            "prec": 0.989054,
+            "sf": "EE",
+            "strat": "WithinWrdFWrd"
+        },
+        {
+            "lf": "bile salt",
+            "prec": 0.99818,
+            "sf": "BS",
+            "strat": "FirstLet"
+        },
+        {
+            "lf": "17alpha-ethinylestradiol",
+            "prec": 0.989054,
+            "sf": "EE",
+            "strat": "WithinWrdFWrd"
+        },
+        {
+            "lf": "bile salt",
+            "prec": 0.99818,
+            "sf": "BS",
+            "strat": "FirstLet"
+        }
+    ],
+    [
+        {
+            "lf": "subthalamic nucleus",
+            "prec": 0.997824,
+            "sf": "STN",
+            "strat": "WithinWrdFWrd"
+        }
+    ],
+    [
+        {
+            "lf": "caspase recruitment domain",
+            "prec": 0.999616,
+            "sf": "CARD",
+            "strat": "WithinWrdFWrd"
+        },
+        {
+            "lf": "leucine-rich repeats",
+            "prec": 0.999408,
+            "sf": "LRR",
+            "strat": "FirstLetGen"
+        }
+    ]
+]
