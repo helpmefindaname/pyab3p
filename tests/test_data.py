@@ -90,11 +90,8 @@ def test_large_snapshot(test_snapshots, testdata) -> None:
     texts = testdata("texts.txt").read_text(encoding="utf-8").split("\n")
 
     result = []
-    idx3 = 1862 + 577 + 3405
-    idx2 = 1862 + 576
-    idx1 = 1861
 
-    for text in [texts[idx1], texts[idx2], texts[idx3]]:
+    for text in texts:
         rows = []
         for r in ab3p.get_abbrs(text):
             rows.append(
