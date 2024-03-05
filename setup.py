@@ -1,4 +1,5 @@
 import glob
+from pathlib import Path
 
 from pybind11.setup_helpers import Pybind11Extension, build_ext
 from setuptools import setup
@@ -9,13 +10,16 @@ setup(
     version="0.1.0",
     author="Benedikt Fuchs",
     description="Python bindings for Ab3p",
+    url="https://github.com/hu-ner/pyab3p",
+    long_description=Path("README.md").read_text(encoding="utf-8"),
+    long_description_content_type="text/markdown",
     ext_modules=[
         Pybind11Extension(
             "pyab3p",
             sources=["main.cpp", *glob.glob("ab3P_source/*.cpp")],
-            extra_compile_args=["-w"],
         )
     ],
     cmdclass={"build_ext": build_ext},
     zip_safe=False,
+    setup_requires=["setuptools-git-versioning"],
 )
