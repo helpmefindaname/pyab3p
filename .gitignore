@@ -4,3 +4,5 @@ Ab3P
 pyab3p.egg-info
 build
 .idea
+__pycache__/
+**/*.pyc
