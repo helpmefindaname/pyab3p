@@ -27,6 +27,7 @@ setup(
                 "ab3p_source/Ab3P.cpp",
                 "main.cpp",
             ],
+        extra_compile_args=["-w"],
         )
     ],
     cmdclass={"build_ext": build_ext},
