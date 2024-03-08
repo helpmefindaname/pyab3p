@@ -17,7 +17,16 @@ setup(
     ext_modules=[
         Pybind11Extension(
             "pyab3p",
-            sources=["main.cpp", *glob.glob("ab3P_source/*.cpp")],
+            sources=[
+                "ab3p_source/MPtok.cpp",
+                "ab3p_source/runn.cpp",
+                "ab3p_source/FBase.cpp",
+                "ab3p_source/Hash.cpp",
+                "ab3p_source/AbbrStra.cpp",
+                "ab3p_source/AbbrvE.cpp",
+                "ab3p_source/Ab3P.cpp",
+                "main.cpp",
+            ],
         )
     ],
     cmdclass={"build_ext": build_ext},

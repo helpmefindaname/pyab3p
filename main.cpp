@@ -21,9 +21,9 @@ PYBIND11_MODULE(pyab3p, m) {
             return "AbbrOut(" + abrout.sf + " -> " + abrout.lf + ")";
         });
 
-    py::class_<Ab3P>(m, "Ab3p")
+    py::class_<iret::Ab3P>(m, "Ab3p")
         .def(py::init<>())
-        .def("get_abbrs", [](Ab3P &ab3p, char *text) {
+        .def("get_abbrs", [](iret::Ab3P &ab3p, char *text) {
             try {
                 return ab3p.get_abbrs(text);
             } catch (const std::runtime_error &e) {
