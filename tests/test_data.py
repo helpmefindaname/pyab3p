@@ -85,7 +85,7 @@ def test_snapshot(test_snapshots, testdata) -> None:
     test_snapshots(result, testdata("bio-output.json"))
 
 
-@pytest.mark.low
+@pytest.mark.slow
 def test_large_snapshot(test_snapshots, testdata) -> None:
     ab3p = pyab3p.Ab3p()
 
