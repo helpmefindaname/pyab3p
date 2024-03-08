@@ -7,8 +7,6 @@
 
 WordData::WordData(const char *wrdnam, const char *stpnam, const char *lfsnam)
     : wrdset(wrdnam), stp(stpnam), lfs(lfsnam) {
-  std::filesystem::path currentPath = std::filesystem::current_path();
-
   wrdset.set_path_name("Ab3P");
   wrdset.gopen_ctable_map();
   stp.set_path_name("Ab3P");
