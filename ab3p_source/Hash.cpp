@@ -243,9 +243,9 @@ void Hash::gopen_htable_copy(Hash *pH) {
 }
 
 long Hash::find(const char *str) {
-  register long ct = 0, i = 0, k;
-  register int ic;
-  register const char *utr = str;
+  long ct = 0, i = 0, k;
+  int ic;
+  const char *utr = str;
   while (ic = *(utr++)) {
     switch (i) {
     case 0:

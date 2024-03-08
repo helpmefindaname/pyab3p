@@ -100,10 +100,10 @@ long Lexos::find(const char *ssr) {
 }
 
 int Lexos::stc_my(const char *ssr, const char *ptr) {
-  register int i = (a < b) ? a : b;
-  register const char *p1 = ssr + i;
-  register const char *p2 = ptr + i;
-  register int j = 0;
+  int i = (a < b) ? a : b;
+  const char *p1 = ssr + i;
+  const char *p2 = ptr + i;
+  int j = 0;
   while ((*p1 == *p2) && (*p1 != '\0')) {
     j++;
     p1++;
