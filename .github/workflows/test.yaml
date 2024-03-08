@@ -21,6 +21,10 @@ jobs:
         # - macos-14  # not compilable for macos
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Checkout LFS objects
+        run: git lfs checkout
       - name: setup python 3.10
         uses: actions/setup-python@v4
         with:
