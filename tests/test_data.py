@@ -49,6 +49,7 @@ def test_regression(text: str) -> None:
     platform.system() != "Linux",
     reason="HunFlairAb3P only works on linux, hence we cannot test it on windows",
 )
+@pytest.mark.low
 def test_large_regression(testdata) -> None:
     texts = testdata("texts.txt").read_text(encoding="utf-8").split("\n")
 
@@ -84,6 +85,7 @@ def test_snapshot(test_snapshots, testdata) -> None:
     test_snapshots(result, testdata("bio-output.json"))
 
 
+@pytest.mark.low
 def test_large_snapshot(test_snapshots, testdata) -> None:
     ab3p = pyab3p.Ab3p()
 

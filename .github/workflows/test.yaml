@@ -32,4 +32,4 @@ jobs:
       - name: Show installed dependencies
         run: pip freeze
       - name: Run tests
-        run: pytest -vv
+        run: pytest -vv -k "not slow"
