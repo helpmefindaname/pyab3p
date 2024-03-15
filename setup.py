@@ -34,8 +34,4 @@ setup(
     zip_safe=False,
     packages=["word_data"],
     package_data={"word_data": ["*"]},
-    setuptools_git_versioning={
-        "enabled": True,
-    },
-    setup_requires=["setuptools-git-versioning"],
 )
