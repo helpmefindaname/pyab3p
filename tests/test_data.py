@@ -1,6 +1,7 @@
 import platform
 
 import pytest
+import word_data
 
 import pyab3p
 from hunflair_ab3p import HunFlairAb3P
@@ -49,7 +50,7 @@ def test_regression(text: str) -> None:
     platform.system() != "Linux",
     reason="HunFlairAb3P only works on linux, hence we cannot test it on windows",
 )
-@pytest.mark.low
+@pytest.mark.slow
 def test_large_regression(testdata) -> None:
     texts = testdata("texts.txt").read_text(encoding="utf-8").split("\n")
 
