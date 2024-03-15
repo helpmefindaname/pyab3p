@@ -21,7 +21,6 @@ FBase::FBase(const char *typ, const char *nam) {
   cflag = 0;
   oflag = 0;
   pflag = get_qflag();
-  eflag = 1;
 }
 
 FBase::FBase(const char *typ, const char *nam, const char *pt) {
@@ -36,8 +35,6 @@ FBase::FBase(const char *typ, const char *nam, const char *pt) {
   pflag = get_qflag();
   if (*pt != ':')
     set_path_name(pt);
-  else
-    set_path_internal(pt + 1);
 }
 
 FBase::~FBase(void) {
@@ -72,106 +69,21 @@ void FBase::subname(const char *tph, const char *tpl, const char *nm) {
   change_name(cnam);
 }
 
-void FBase::set_path_internal(const char *pt) {
-  size_t len;
-  if (pt && (len = strlen(pt))) {
-    eflag = 0;
-    path = new char[len + 1];
-    strcpy(path, pt);
-  } else
-    eflag = 1;
-}
-
 void FBase::set_path_name(const char *pa) {
-  size_t len;
-  if (pa && (len = strlen(pa))) {
-    eflag = 2;
-    pnam = new char[len + 1];
-    strcpy(pnam, pa);
-  } else
-    eflag = 1;
-}
-
-void FBase::map_down(FBase *pFb) {
-  pFb->change_type(type);
-  pFb->change_name(name);
-  pFb->pflag = pflag;
-  if (eflag == 2)
-    pFb->set_path_name(pnam);
-  else if (!eflag)
-    pFb->set_path_internal(path);
-}
-
-void FBase::map_down_sub(FBase *pFb, const char *subtype) {
-  pFb->subname(type, name, subtype);
-  pFb->pflag = pflag;
-  if (eflag == 2)
-    pFb->set_path_name(pnam);
-  else if (!eflag)
-    pFb->set_path_internal(path);
+  size_t len = strlen(pa);
+  pnam = new char[len + 1];
+  strcpy(pnam, pa);
 }
 
 void FBase::get_pathx(char *nam, const char *ch) {
-  char cnam[256];
-  ifstream fin;
-
-  if (eflag == 2) {
-    strcpy(cnam, "path_");
-    strcat(cnam, pnam);
-    fin.open(cnam, ios::in);
-    if (!fin.is_open()) {
-      fin.clear();
-      strcpy(cnam, "path");
-      fin.open(cnam, ios::in);
-      if (!fin.is_open()) {
-        throw std::runtime_error("Path file for type " + std::string(type) +
-                                 " does not exist!");
-      }
-    }
-    fin.getline(nam, 256);
-    fin.close();
-  } else if (eflag) {
-    strcpy(cnam, "path_");
-    strcat(cnam, type);
-    strcat(cnam, "_");
-    strcat(cnam, name);
-    strcat(cnam, ".");
-    strcat(cnam, ch);
-    fin.open(cnam, ios::in);
-    if (!fin.is_open()) {
-      fin.clear();
-      strcpy(cnam, "path_");
-      strcat(cnam, type);
-      strcat(cnam, "_");
-      strcat(cnam, name);
-      fin.open(cnam, ios::in);
-      if (!fin.is_open()) {
-        fin.clear();
-        strcpy(cnam, "path_");
-        strcat(cnam, type);
-        fin.open(cnam, ios::in);
-        if (!fin.is_open()) {
-          fin.clear();
-          strcpy(cnam, "path");
-          fin.open(cnam, ios::in);
-          if (!fin.is_open()) {
-            throw std::runtime_error("Path file for type " + std::string(type) +
-                                     " does not exist!");
-          }
-        }
-      }
-    }
-    fin.getline(nam, 256);
-    fin.close();
-  } else {
-    strcpy(nam, path);
-  }
-
+  strcpy(nam, pnam);
+  strcat(nam, "/");
   strcat(nam, type);
   strcat(nam, "_");
   strcat(nam, name);
   strcat(nam, ".");
   strcat(nam, ch);
+  std::cout << nam << std::endl;
 }
 
 ifstream *FBase::get_Istr(const char *a, ios::openmode mode) {

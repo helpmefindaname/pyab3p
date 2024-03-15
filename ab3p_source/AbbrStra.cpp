@@ -5,13 +5,10 @@
 #include <iostream>
 #include <vector>
 
-WordData::WordData(const char *wrdnam, const char *stpnam, const char *lfsnam)
-    : wrdset(wrdnam), stp(stpnam), lfs(lfsnam) {
-  wrdset.set_path_name("Ab3P");
+WordData::WordData(std::string path, const char *wrdnam, const char *stpnam, const char *lfsnam)
+    : wrdset(wrdnam, path.c_str()), stp(stpnam, path.c_str()), lfs(lfsnam, path.c_str()) {
   wrdset.gopen_ctable_map();
-  stp.set_path_name("Ab3P");
   stp.gopen_htable_map();
-  lfs.set_path_name("Ab3P");
   lfs.gopen_htable_map();
 }
 

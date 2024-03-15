@@ -26,11 +26,13 @@ setup(
                 "ab3p_source/Ab3P.cpp",
                 "main.cpp",
             ],
-        extra_compile_args=["-w"],
+            extra_compile_args=["-w"],
         )
     ],
     cmdclass={"build_ext": build_ext},
     zip_safe=False,
+    packages=["word_data"],
+    package_data={"word_data": ["*"]},
     setuptools_git_versioning={
         "enabled": True,
     },

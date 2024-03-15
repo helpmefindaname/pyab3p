@@ -10,7 +10,7 @@ using namespace iret;
 
 class WordData {
 public:
-  WordData(const char *wrdname = "wrdset3", const char *stpname = "stop",
+  WordData(std::string path, const char *wrdname = "wrdset3", const char *stpname = "stop",
            const char *lfsname = "Lf1chSf");
 
   ~WordData();

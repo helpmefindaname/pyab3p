@@ -2,8 +2,16 @@
 #include "ab3p_source/Ab3P.h"
 #include <pybind11/stl.h>
 #include <pybind11/functional.h>
+#include <pybind11/embed.h>
 
 namespace py = pybind11;
+
+std::string getModulePath()
+{
+    py::object module = py::module::import("word_data");
+    py::list module_paths = module.attr("__path__");
+    return module_paths[0].cast<std::string>();
+}
 
 PYBIND11_MODULE(pyab3p, m) {
     py::class_<AbbrOut>(m, "AbbrOut")
@@ -22,7 +30,9 @@ PYBIND11_MODULE(pyab3p, m) {
         });
 
     py::class_<iret::Ab3P>(m, "Ab3p")
-        .def(py::init<>())
+        .def(py::init([]() {
+            return new iret::Ab3P(getModulePath());
+        }))
         .def("get_abbrs", [](iret::Ab3P &ab3p, char *text) {
             try {
                 return ab3p.get_abbrs(text);

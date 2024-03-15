@@ -29,7 +29,7 @@ public:
 
 class Ab3P {
 public:
-  Ab3P(void);
+  Ab3P(std::string path);
   ~Ab3P(void) { delete wrdData; }
 
   std::vector<AbbrOut> get_abbrs(char *text);

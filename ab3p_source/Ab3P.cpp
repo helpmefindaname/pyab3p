@@ -1,11 +1,11 @@
 #include "Ab3P.h"
 
-Ab3P::Ab3P(void) : wrdData(new WordData) {
+Ab3P::Ab3P(std::string path) : wrdData(new WordData(path)) {
 
   string sf_grp, sf_nchr, strat;
   double value;
 
-  FBase prec("Ab3P", "prec");
+  FBase prec("Ab3P", "prec", path.c_str());
   ifstream *fin = prec.get_Istr("dat");
   // get precision of a given #-ch SF's strategy
   while (*fin >> sf_grp >> sf_nchr >> strat) {

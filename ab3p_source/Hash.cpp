@@ -5,7 +5,7 @@ namespace iret {
 
 Hash::Hash(void) : FBase("hshset", "null") {}
 
-Hash::Hash(const char *nam) : FBase("hshset", nam) {}
+Hash::Hash(const char *nam, const char *path) : FBase("hshset", nam, path) {}
 
 Hash::~Hash() {}
 
@@ -352,7 +352,7 @@ void Hash::gclose_htable_map(void) {
 
 Chash::Chash() : Hash() { change_type("cshset"); }
 
-Chash::Chash(const char *str) : Hash(str) { change_type("cshset"); }
+Chash::Chash(const char *str, const char *path) : Hash(str, path) { change_type("cshset"); }
 
 Chash::~Chash(void) {}
 

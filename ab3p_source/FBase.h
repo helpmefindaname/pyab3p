@@ -40,19 +40,10 @@ public:
   void change_name(const char *nm);
   // Allows change of name string for class
   void subname(const char *tph, const char *tpl, const char *nm);
-  // Uses the higher level type tph as type and
-  // combines lower level tpl_nm with name
-  // to allow one to keep track of file types
-  void set_path_internal(const char *pt);
   // Path is by default external with eflag=1
   // But if this function called with nonempty string,
   // then eflag=0 and pt stored in path and used for access to data
   void set_path_name(const char *pa);
-  // Path will be extracted from path_pa and eflag=2
-  // Naming conventions for files are unchanged
-  void map_down(FBase *pFb);
-  // Maps naming parameters to class instance pFb
-  void map_down_sub(FBase *pFb, const char *subtype);
   // Maps naming parameters to class instance pFb
   // Combines subtype with name to make a new name for pFb and
   // type becomes its type
@@ -121,8 +112,6 @@ public:
   char *type;
   char *name;
   int pflag;  // Print flag. 1 for verbose output (default), 0 for none
-  int eflag;  // Flag set to 1 for external path from path file
-              // 0 for internal path
   char *path; // Path stored here if eflag=0.
   char *pnam; // Path extension stored here if eflag=2.
 };

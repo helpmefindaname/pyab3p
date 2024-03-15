@@ -15,7 +15,7 @@ namespace iret {
 class Hash : public FBase {
 public:
   Hash(void);
-  Hash(const char *nm);
+  Hash(const char *nm, const char *path);
   ~Hash();
 
   void create_htable(strMap &Mp, int excess);
@@ -58,7 +58,7 @@ public:
 class Chash : public Hash {
 public:
   Chash(void);
-  Chash(const char *nm);
+  Chash(const char *nm, const char *path);
   ~Chash(void);
 
   void create_ctable(strMap &Mp, int excess);
