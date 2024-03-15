@@ -8,6 +8,7 @@ setup(
     name="pyab3p",
     version="0.1.0",
     author="Benedikt Fuchs",
+    python_requires=">=3.8.0",
     author_email="benedikt.fuchs.staw@hotmail.com",
     description="Python bindings for Ab3p",
     url="https://github.com/hu-ner/pyab3p",
