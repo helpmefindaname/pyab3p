@@ -1,4 +1,3 @@
-import glob
 from pathlib import Path
 
 from pybind11.setup_helpers import Pybind11Extension, build_ext

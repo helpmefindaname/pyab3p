@@ -13,12 +13,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # macos-13 is an intel runner, macos-14 is apple silicon
         os:
         - ubuntu-latest
         - windows-latest
-        - macos-13
-        - macos-14
+        # - macos-13 # macos not supporte
+        # - macos-14 # macos not supporte
     steps:
       - uses: actions/checkout@v4
         with:
