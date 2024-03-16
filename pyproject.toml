@@ -12,4 +12,4 @@ markers = [
 skip = "pp*"
 
 before-test = "pip install -r requirements-test.txt"
-test-command = "pytest -vv -k \"not slow\""
+test-command = "pytest -vv -k \"not slow\" {project}"
