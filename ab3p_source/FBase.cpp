@@ -83,7 +83,6 @@ void FBase::get_pathx(char *nam, const char *ch) {
   strcat(nam, name);
   strcat(nam, ".");
   strcat(nam, ch);
-  std::cout << nam << std::endl;
 }
 
 ifstream *FBase::get_Istr(const char *a, ios::openmode mode) {

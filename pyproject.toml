@@ -10,3 +10,6 @@ markers = [
 
 [tool.cibuildwheel]
 skip = "pp*"
+
+before-test = "pip install -r requirements-test.txt"
+test-command = "pytest -vv -k \"not slow\""

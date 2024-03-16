@@ -1,7 +1,6 @@
 import platform
 
 import pytest
-import word_data
 
 import pyab3p
 from hunflair_ab3p import HunFlairAb3P
