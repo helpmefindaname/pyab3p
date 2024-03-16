@@ -5,6 +5,7 @@ build-backend = "setuptools.build_meta"
 [tool.pytest.ini_options]
 markers = [
     "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "regression: marks tests as regression tests, which rely on the original ab3p that is not available on all versions (deselect with '-m \"not regression\"')",
     "serial",
 ]
 
@@ -12,4 +13,4 @@ markers = [
 skip = "pp*"
 
 before-test = "pip install -r requirements-test.txt"
-test-command = "pytest -vv -k \"not slow\" {project}"
+test-command = "pytest -vv -k \"not slow and not regression\" {project}"

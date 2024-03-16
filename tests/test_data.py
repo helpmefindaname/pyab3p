@@ -35,6 +35,7 @@ texts = [
     platform.system() != "Linux",
     reason="HunFlairAb3P only works on linux, hence we cannot test it on windows",
 )
+@pytest.mark.regression
 def test_regression(text: str) -> None:
     hunflair_ab3p = HunFlairAb3P()
     ab3p = pyab3p.Ab3p()
@@ -50,6 +51,7 @@ def test_regression(text: str) -> None:
     reason="HunFlairAb3P only works on linux, hence we cannot test it on windows",
 )
 @pytest.mark.slow
+@pytest.mark.regression
 def test_large_regression(testdata) -> None:
     texts = testdata("texts.txt").read_text(encoding="utf-8").split("\n")
 
