@@ -6,7 +6,7 @@ from setuptools import setup
 
 setup(
     name="pyab3p",
-    version="0.1.0",
+    version="0.1.1",
     author="Benedikt Fuchs",
     python_requires=">=3.8.0",
     author_email="benedikt.fuchs.staw@hotmail.com",
