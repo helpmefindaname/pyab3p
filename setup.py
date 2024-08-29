@@ -11,7 +11,7 @@ setup(
     python_requires=">=3.8.0",
     author_email="benedikt.fuchs.staw@hotmail.com",
     description="Python bindings for Ab3p",
-    url="https://github.com/hu-ner/pyab3p",
+    url="https://github.com/helpmefindaname/pyab3p",
     long_description=Path("README.md").read_text(encoding="utf-8"),
     long_description_content_type="text/markdown",
     ext_modules=[
